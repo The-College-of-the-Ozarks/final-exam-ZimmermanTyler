@@ -3,9 +3,9 @@ DinnerEvent Class:
 There are no issues with this class.
 
 Documentation:
-
-@param
-@return
+This class extends event class which it adds an array of employees that would work the event and stores all the choices for the different meals for the dinner event.
+@param Has one parameter that includes both a String and int for the superclasss. Also, four ints to pick the meal for the event.
+@return has a method to return the meal in the desired format. Also, has a get and set methods for the employee array.
 
 
 */

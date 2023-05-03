@@ -4,8 +4,8 @@ There are no issues with this class.
 
 Documentation:
 
-@param
-@return
+@param This class has no contructor, so there is no parameters that need to be listed.
+@return Has set methods for the abstract methods within the superclass.
 
 */
 public class Coordinator extends Employee

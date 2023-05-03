@@ -8,9 +8,10 @@ so that the user is continuously prompted until they enter the numbers (ints).
 
 
 Documentation:
+This class uses every other class made within this program to create a dinner event with a list of all the different types of employees. This classes methods are made to interact directly with the user and ask for inputs that are needed to fill up the objects. Also, once all the information is entered, it will print out all the information back to the user. Lastly, it will check to make sure the user did not input an incorrect data type for the number of guests at the dinner event.
 
-@param
-@return
+@param This class has no contructor, so there is no parameters that need to be listed.
+@return There is no class below this to use the methods made here, so no need for return information
 
 
 */
@@ -29,7 +30,7 @@ public class StaffDinnerEvent
       int y;
       int waitStaff;
       int chefs;
-      int[] menuOption = new int[3];
+      int[] menuOption = new int[4];
       eventNum = getEventNumber();
       guests = getGuests();
       for(y = 0; y < menuOption.length; ++y)
@@ -111,14 +112,25 @@ public class StaffDinnerEvent
       final int MIN_GUESTS = 5;
       final int MAX_GUESTS = 100;
       Scanner input = new Scanner(System.in);
+      try{
       System.out.print("Enter number of guests >> ");
       guests = input.nextInt();
+      }
+      catch(Exception error){
+        input.nextLine();
+        guests = -2;
+      }
       while(guests < MIN_GUESTS || guests > MAX_GUESTS)
       {
           System.out.println("The number of guests must be between " +
             MIN_GUESTS + " and " + MAX_GUESTS);
+          try{
           System.out.print("Please renter >> ");
           guests = input.nextInt();
+          }
+          catch(Exception error){
+            input.nextLine();
+          }
       } 
       input.nextLine();
       return guests;

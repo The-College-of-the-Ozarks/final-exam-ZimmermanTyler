@@ -4,12 +4,12 @@ This class contains multiple typos and needs debugged. There are no logical issu
 besides the aforementioned typos.
 
 Documentation:
-
-@param
-@return
+The event class is made to hold and test that all the information into the object is in the correct format. The object only needs the event number and the number of guests to be created, while the rest of the information can be entered into the object later.
+@param This event can either be called with no parameters or a String & an int.
+@return All information stored within this class can be called with a get method and will return it in the correct format.
 
 */
-class event
+class Event
 {
    public final static double HIGH_GUEST_PRICE = 35.00;
    public final static double LOW_GUEST_PRICE = 32.00;  
@@ -25,7 +25,7 @@ class event
    private int eventType;
    public Event()
    {
-      This("A000", 0);
+      this("A000", 0);
    } 
    public Event(String num, int guests)
    {
@@ -34,8 +34,8 @@ class event
    }
    public void setEventNumber(String num)
    {
-      boolean numOk = true;
-      if(num.length() != EVENT_NUM_LENGTH || !Character.isLetter(num.charAt(0)) || !Character.isDigit(num.charAt(1)) || !Character.isDigit(num.charAt(2)) || !Character.isDigit(num.charAt(3))) 
+      boolean numOk = num.length() != EVENT_NUM_LENGTH || !Character.isLetter(num.charAt(0)) || !Character.isDigit(num.charAt(1)) || !Character.isDigit(num.charAt(2)) || !Character.isDigit(num.charAt(3));
+      if(numOk) 
           eventNumber = "A000";      
         else
          eventNumber = num.toUpperCase();
@@ -54,6 +54,27 @@ class event
          priceForEvent = guests * HIGH_GUEST_PRICE;
       }
    }
+   public static double getHighGuestPrice() {
+		return HIGH_GUEST_PRICE;
+	}
+	 public static double getLowGuestPrice() {
+		return LOW_GUEST_PRICE;
+	}
+	 public static int getLargeEvent() {
+		return LARGE_EVENT;
+	}
+	 public static int getEventNumLength() {
+		return EVENT_NUM_LENGTH;
+	}
+	 public static String[] getEventTypes() {
+		return EVENT_TYPES;
+	}
+	 public void setPricePerGuest(double pricePerGuest) {
+		this.pricePerGuest = pricePerGuest;
+	}
+	 public void setPriceForEvent(double priceForEvent) {
+		this.priceForEvent = priceForEvent;
+	}
    public String getEventNumber()
    {
       return eventNumber;
@@ -88,7 +109,7 @@ class event
       {
          if(Character.isDigit(phone.charAt(x)))
             contactPhone += phone.charAt(x);
-      
+      }
       if(contactPhone.length() != VALID_LEN)
          contactPhone = INVALID_PHONE;
    }
@@ -113,6 +134,5 @@ class event
       if(guests >= LARGE_EVENT)
          isLarge = true;
       return isLarge;
-   }
    }
 }

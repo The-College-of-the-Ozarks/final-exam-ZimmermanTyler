@@ -8,12 +8,23 @@ The chef should be paid a minimum of $14.00 /hr and the job title will be chef.
 
 Documentation:
 
-@param
-@return
+@param This class has no contructor, so there is no parameters that need to be listed.
+@return Has set methods for the abstract methods within the superclass.
 
 */
 
 public class Chef extends Employee
 {
-
+  public final static double PAY_RATE = 14.00;
+   public void setPayRate(double rate)
+   {
+      if(rate > PAY_RATE)
+        payRate = PAY_RATE;
+      else
+        payRate = rate;
+   }
+   public void setJobTitle()
+   {
+      jobTitle = "chef";
+   }
 }
